@@ -78,7 +78,15 @@ theme: next
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type:
+  type: rsync
+  host: 120.78.129.187
+  user: root
+  root: /root/blog/Blog
+  port: 80
+  delete: true
+  verbose: true
+  ignore_errors: false
+
 
 admin:
   deployCommand: './hexo-deploy.sh'
