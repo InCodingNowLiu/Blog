@@ -79,17 +79,20 @@
 
 
 
-<meta name="description" content="rasa config1python -m rasa_nlu.server -c sample_configs/config_spacy.json 1python -m rasa_nlu.server -c sample_configs/config_ava_20171201.json &amp;amp; 1curl -X POST localhost:5000/parse -d &apos;&amp;#123;&quot;q&quot;:&quot;">
+<meta name="description" content="Git rebase 常规使用详解git pullgit pull = git fetch + git mergegit pull –rebase = git fetch + git rebase1git pull --rebase rebase版merge分支日常工作中我们需要将我们的develop 分支merge到master上面(当然严格来说要提pull requestQAQ), 这里只是举">
 <meta property="og:type" content="article">
-<meta property="og:title" content="rasa config">
-<meta property="og:url" content="https://incodingnowliu.com/blog/2018/06/02/rasa-config/index.html">
+<meta property="og:title" content="Git rebase 简单使用">
+<meta property="og:url" content="https://incodingnowliu.com/blog/2018/08/12/Git-rebase-简单使用/index.html">
 <meta property="og:site_name" content="刘吉庆的blog">
-<meta property="og:description" content="rasa config1python -m rasa_nlu.server -c sample_configs/config_spacy.json 1python -m rasa_nlu.server -c sample_configs/config_ava_20171201.json &amp;amp; 1curl -X POST localhost:5000/parse -d &apos;&amp;#123;&quot;q&quot;:&quot;">
+<meta property="og:description" content="Git rebase 常规使用详解git pullgit pull = git fetch + git mergegit pull –rebase = git fetch + git rebase1git pull --rebase rebase版merge分支日常工作中我们需要将我们的develop 分支merge到master上面(当然严格来说要提pull requestQAQ), 这里只是举">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-02T12:29:01.656Z">
+<meta property="og:image" content="https://incodingnowliu.com/images/pasted-0.png">
+<meta property="og:image" content="https://incodingnowliu.com/images/pasted-1.png">
+<meta property="og:updated_time" content="2018-08-12T11:38:13.161Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="rasa config">
-<meta name="twitter:description" content="rasa config1python -m rasa_nlu.server -c sample_configs/config_spacy.json 1python -m rasa_nlu.server -c sample_configs/config_ava_20171201.json &amp;amp; 1curl -X POST localhost:5000/parse -d &apos;&amp;#123;&quot;q&quot;:&quot;">
+<meta name="twitter:title" content="Git rebase 简单使用">
+<meta name="twitter:description" content="Git rebase 常规使用详解git pullgit pull = git fetch + git mergegit pull –rebase = git fetch + git rebase1git pull --rebase rebase版merge分支日常工作中我们需要将我们的develop 分支merge到master上面(当然严格来说要提pull requestQAQ), 这里只是举">
+<meta name="twitter:image" content="https://incodingnowliu.com/images/pasted-0.png">
 
 
 
@@ -119,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="https://incodingnowliu.com/blog/2018/06/02/rasa-config/"/>
+  <link rel="canonical" href="https://incodingnowliu.com/blog/2018/08/12/Git-rebase-简单使用/"/>
 
 
 
 
 
-  <title>rasa config | 刘吉庆的blog</title>
+  <title>Git rebase 简单使用 | 刘吉庆的blog</title>
   
 
 
@@ -262,7 +265,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://incodingnowliu.com/blog/2018/06/02/rasa-config/">
+    <link itemprop="mainEntityOfPage" href="https://incodingnowliu.com/blog/2018/08/12/Git-rebase-简单使用/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="incodingnowliu">
@@ -279,7 +282,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">rasa config</h1>
+          <h1 class="post-title" itemprop="name headline">Git rebase 简单使用</h1>
         
 
         <div class="post-meta">
@@ -291,8 +294,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-02T20:06:28+08:00">
-                2018-06-02
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-12T19:17:57+08:00">
+                2018-08-12
               </time>
             
 
@@ -329,10 +332,21 @@
       
 
       
-        <h1 id="rasa-config"><a href="#rasa-config" class="headerlink" title="rasa config"></a>rasa config</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -m rasa_nlu.server -c sample_configs/config_spacy.json</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -m rasa_nlu.server -c sample_configs/config_ava_20171201.json &amp;</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -X POST localhost:5000/parse -d <span class="string">'&#123;"q":"I am looking for Mexican food"&#125;'</span> | python -m json.tool</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup python -m rasa_nlu.server -c sample_configs/config_ava_20171206.json</span><br></pre></td></tr></table></figure>
+        <h1 id="Git-rebase-常规使用详解"><a href="#Git-rebase-常规使用详解" class="headerlink" title="Git rebase 常规使用详解"></a>Git rebase 常规使用详解</h1><h2 id="git-pull"><a href="#git-pull" class="headerlink" title="git pull"></a>git pull</h2><p>git pull = git fetch + git merge<br>git pull –rebase = git fetch + git rebase<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull --rebase</span><br></pre></td></tr></table></figure></p>
+<h2 id="rebase版merge分支"><a href="#rebase版merge分支" class="headerlink" title="rebase版merge分支"></a>rebase版merge分支</h2><p>日常工作中我们需要将我们的develop 分支merge到master上面(当然严格来说要提pull requestQAQ), 这里只是举个范例</p>
+<p>1.拉取到最新代码<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout master</span><br><span class="line">git pull --rebase</span><br></pre></td></tr></table></figure></p>
+<p>2.将develop分支代码rebase + merge 到master分支<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git rebase develop</span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure></p>
+<h2 id="rebase-冲突解决"><a href="#rebase-冲突解决" class="headerlink" title="rebase 冲突解决"></a>rebase 冲突解决</h2><p>日常开发中多个人会同事修改同一个文件, 这样就避免不了冲突, 但是rebase 解决冲突其实很简单</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rebase develop</span><br></pre></td></tr></table></figure>
+<p>rebase 的时候出现下面冲突<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</span><br><span class="line">rebase first commit</span><br><span class="line">rebase test2</span><br><span class="line">=======</span><br><span class="line">rebase second commit</span><br><span class="line">&gt;&gt;&gt;&gt;&gt;&gt;&gt; rebase commit 2</span><br></pre></td></tr></table></figure></p>
+<p>此时我们只需要先解决冲突,<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">rebase first commit</span><br><span class="line">rebase test2</span><br><span class="line">rebase second commit</span><br></pre></td></tr></table></figure></p>
+<p>然后<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git rebase --<span class="built_in">continue</span></span><br><span class="line">git push</span><br></pre></td></tr></table></figure></p>
+<p>成功将我们的develop分支完美rebase + merge到master上面</p>
+<p>效果如下图, 是不是治愈了你的强迫症QAQ<br><img src="/images/pasted-0.png" alt="upload successful"></p>
+<p>之前的你的分支可能是这样<br><img src="/images/pasted-1.png" alt="upload successful"></p>
+<p>当然你也可以skip 恢复到rebase 之前的状态<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rebase --skip</span><br></pre></td></tr></table></figure></p>
+<p>以上是楼主花了一点时间研究的成果, 如果有什么错误的地方, 欢迎大家提意见</p>
+
       
     </div>
     
@@ -371,8 +385,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/02/angular5-知识点/" rel="next" title="angular5 知识点">
-                <i class="fa fa-chevron-left"></i> angular5 知识点
+              <a href="/2018/06/02/iOS-生成文档/" rel="next" title="iOS 生成文档">
+                <i class="fa fa-chevron-left"></i> iOS 生成文档
               </a>
             
           </div>
@@ -380,10 +394,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/06/02/git-配置ssh-key-不生效/" rel="prev" title="git 配置ssh key 不生效">
-                git 配置ssh key 不生效 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -528,7 +538,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#rasa-config"><span class="nav-number">1.</span> <span class="nav-text">rasa config</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Git-rebase-常规使用详解"><span class="nav-number">1.</span> <span class="nav-text">Git rebase 常规使用详解</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#git-pull"><span class="nav-number">1.1.</span> <span class="nav-text">git pull</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rebase版merge分支"><span class="nav-number">1.2.</span> <span class="nav-text">rebase版merge分支</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rebase-冲突解决"><span class="nav-number">1.3.</span> <span class="nav-text">rebase 冲突解决</span></a></li></ol></li></ol></div>
             
 
           </div>
