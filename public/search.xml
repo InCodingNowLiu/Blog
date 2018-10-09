@@ -4,8 +4,8 @@
     
     <entry>
       <title>Git rebase 简单使用</title>
-      <link href="/2018/08/12/Git-rebase-%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/"/>
-      <url>/2018/08/12/Git-rebase-%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/</url>
+      <link href="/Blog/2018/08/12/Git-rebase-%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/"/>
+      <url>/Blog/2018/08/12/Git-rebase-%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/</url>
       <content type="html"><![CDATA[<h1 id="Git-rebase-常规使用详解"><a href="#Git-rebase-常规使用详解" class="headerlink" title="Git rebase 常规使用详解"></a>Git rebase 常规使用详解</h1><h2 id="git-pull"><a href="#git-pull" class="headerlink" title="git pull"></a>git pull</h2><p>git pull = git fetch + git merge<br>git pull –rebase = git fetch + git rebase<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull --rebase</span><br></pre></td></tr></table></figure></p><h2 id="rebase版merge分支"><a href="#rebase版merge分支" class="headerlink" title="rebase版merge分支"></a>rebase版merge分支</h2><p>日常工作中我们需要将我们的develop 分支merge到master上面(当然严格来说要提pull requestQAQ), 这里只是举个范例</p><p>1.拉取到最新代码<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout master</span><br><span class="line">git pull --rebase</span><br></pre></td></tr></table></figure></p><p>2.将develop分支代码rebase + merge 到master分支<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git rebase develop</span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure></p><h2 id="rebase-冲突解决"><a href="#rebase-冲突解决" class="headerlink" title="rebase 冲突解决"></a>rebase 冲突解决</h2><p>日常开发中多个人会同事修改同一个文件, 这样就避免不了冲突, 但是rebase 解决冲突其实很简单</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rebase develop</span><br></pre></td></tr></table></figure><p>rebase 的时候出现下面冲突<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</span><br><span class="line">rebase first commit</span><br><span class="line">rebase test2</span><br><span class="line">=======</span><br><span class="line">rebase second commit</span><br><span class="line">&gt;&gt;&gt;&gt;&gt;&gt;&gt; rebase commit 2</span><br></pre></td></tr></table></figure></p><p>此时我们只需要先解决冲突,<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">rebase first commit</span><br><span class="line">rebase test2</span><br><span class="line">rebase second commit</span><br></pre></td></tr></table></figure></p><p>然后<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git rebase --<span class="built_in">continue</span></span><br><span class="line">git push</span><br></pre></td></tr></table></figure></p><p>成功将我们的develop分支完美rebase + merge到master上面</p><p>效果如下图, 是不是治愈了你的强迫症QAQ<br><img src="/images/pasted-0.png" alt="upload successful"></p><p>之前的你的分支可能是这样<br><img src="/images/pasted-1.png" alt="upload successful"></p><p>当然你也可以skip 恢复到rebase 之前的状态<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rebase --skip</span><br></pre></td></tr></table></figure></p><p>以上是楼主花了一点时间研究的成果, 如果有什么错误的地方, 欢迎大家提意见</p>]]></content>
       
       
@@ -13,8 +13,8 @@
     
     <entry>
       <title>iOS 生成文档</title>
-      <link href="/2018/06/02/iOS-%E7%94%9F%E6%88%90%E6%96%87%E6%A1%A3/"/>
-      <url>/2018/06/02/iOS-%E7%94%9F%E6%88%90%E6%96%87%E6%A1%A3/</url>
+      <link href="/Blog/2018/06/02/iOS-%E7%94%9F%E6%88%90%E6%96%87%E6%A1%A3/"/>
+      <url>/Blog/2018/06/02/iOS-%E7%94%9F%E6%88%90%E6%96%87%E6%A1%A3/</url>
       <content type="html"><![CDATA[<h1 id="iOS-生成文档"><a href="#iOS-生成文档" class="headerlink" title="iOS 生成文档"></a>iOS 生成文档</h1><p>文档</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1. appledoc --output ./doc --project-name delegate  --project-company <span class="string">"com.pwcsdc.AIAMobile"</span> --company-id <span class="string">"com.pwcsdc.AIAMobile"</span> ./</span><br></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">appledoc -o ./doc --project-name “AIAMobile_Swift” --project-company “pwcsdc.com” .</span><br></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">appledoc --project-name AIAMobile --project-company “xxx” --company-id com.xxx [--output ./Users/xxx]  [includeFilePathOrFile] [--ignore excludeFilePathOrFile] .</span><br></pre></td></tr></table></figure><p>Appledoc 生成xcode 注释文档</p><p>jazzy的使用<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jazzy --min-acl internal</span><br></pre></td></tr></table></figure></p>]]></content>
       
       
@@ -22,8 +22,8 @@
     
     <entry>
       <title>记账本iOS应用</title>
-      <link href="/2018/06/02/%E8%AE%B0%E8%B4%A6%E6%9C%ACiOS%E5%BA%94%E7%94%A8/"/>
-      <url>/2018/06/02/%E8%AE%B0%E8%B4%A6%E6%9C%ACiOS%E5%BA%94%E7%94%A8/</url>
+      <link href="/Blog/2018/06/02/%E8%AE%B0%E8%B4%A6%E6%9C%ACiOS%E5%BA%94%E7%94%A8/"/>
+      <url>/Blog/2018/06/02/%E8%AE%B0%E8%B4%A6%E6%9C%ACiOS%E5%BA%94%E7%94%A8/</url>
       <content type="html"><![CDATA[<h1 id="记账本iOS应用"><a href="#记账本iOS应用" class="headerlink" title="记账本iOS应用"></a>记账本iOS应用</h1><ol><li>思路 第一个是做蓝牙,被我半途而废</li><li>做 记账本, 可以输入工资,然后进行计算,包括公积金的计算等等,记录当前你的工资,也可以自己手动输入.</li></ol>]]></content>
       
       
@@ -31,8 +31,8 @@
     
     <entry>
       <title>iOS 弹出拍照界面100多次会出现crash 情况</title>
-      <link href="/2018/06/02/iOS-%E5%BC%B9%E5%87%BA%E6%8B%8D%E7%85%A7%E7%95%8C%E9%9D%A2100%E5%A4%9A%E6%AC%A1%E4%BC%9A%E5%87%BA%E7%8E%B0crash-%E6%83%85%E5%86%B5/"/>
-      <url>/2018/06/02/iOS-%E5%BC%B9%E5%87%BA%E6%8B%8D%E7%85%A7%E7%95%8C%E9%9D%A2100%E5%A4%9A%E6%AC%A1%E4%BC%9A%E5%87%BA%E7%8E%B0crash-%E6%83%85%E5%86%B5/</url>
+      <link href="/Blog/2018/06/02/iOS-%E5%BC%B9%E5%87%BA%E6%8B%8D%E7%85%A7%E7%95%8C%E9%9D%A2100%E5%A4%9A%E6%AC%A1%E4%BC%9A%E5%87%BA%E7%8E%B0crash-%E6%83%85%E5%86%B5/"/>
+      <url>/Blog/2018/06/02/iOS-%E5%BC%B9%E5%87%BA%E6%8B%8D%E7%85%A7%E7%95%8C%E9%9D%A2100%E5%A4%9A%E6%AC%A1%E4%BC%9A%E5%87%BA%E7%8E%B0crash-%E6%83%85%E5%86%B5/</url>
       <content type="html"><![CDATA[<h1 id="iOS-弹出拍照界面100多次会出现crash-情况"><a href="#iOS-弹出拍照界面100多次会出现crash-情况" class="headerlink" title="iOS 弹出拍照界面100多次会出现crash 情况"></a>iOS 弹出拍照界面100多次会出现crash 情况</h1>]]></content>
       
       
@@ -40,8 +40,8 @@
     
     <entry>
       <title>IOS 判断是否连接vpn </title>
-      <link href="/2018/06/02/IOS-%E5%88%A4%E6%96%AD%E6%98%AF%E5%90%A6%E8%BF%9E%E6%8E%A5vpn/"/>
-      <url>/2018/06/02/IOS-%E5%88%A4%E6%96%AD%E6%98%AF%E5%90%A6%E8%BF%9E%E6%8E%A5vpn/</url>
+      <link href="/Blog/2018/06/02/IOS-%E5%88%A4%E6%96%AD%E6%98%AF%E5%90%A6%E8%BF%9E%E6%8E%A5vpn/"/>
+      <url>/Blog/2018/06/02/IOS-%E5%88%A4%E6%96%AD%E6%98%AF%E5%90%A6%E8%BF%9E%E6%8E%A5vpn/</url>
       <content type="html"><![CDATA[<h1 id="iOS-判断是否连接vpn"><a href="#iOS-判断是否连接vpn" class="headerlink" title="iOS 判断是否连接vpn"></a>iOS 判断是否连接vpn</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- (BOOL)isVPNConnected&#123;</span><br><span class="line">    struct ifaddrs *interfaces = NULL;</span><br><span class="line">    struct ifaddrs *temp_addr = NULL;</span><br><span class="line">    int success = 0;</span><br><span class="line">    </span><br><span class="line">    // retrieve the current interfaces - returns 0 on success</span><br><span class="line">    success = getifaddrs(&amp;interfaces);</span><br><span class="line">    <span class="keyword">if</span> (success == 0) &#123;</span><br><span class="line">        // Loop through linked list of interfaces</span><br><span class="line">        temp_addr = interfaces;</span><br><span class="line">        </span><br><span class="line">        NSString *str = @<span class="string">""</span>;</span><br><span class="line">        <span class="keyword">while</span> (temp_addr != NULL) &#123;</span><br><span class="line">            NSString *string = [NSString stringWithFormat:@<span class="string">"%s"</span> , temp_addr-&gt;ifa_name];</span><br><span class="line">            str = [NSString stringWithFormat:@<span class="string">"%@,%@"</span>,str,string];</span><br><span class="line">            NSOperatingSystemVersion version =[NSProcessInfo processInfo].operatingSystemVersion;</span><br><span class="line">            NSString *versionStr = [NSString stringWithFormat:@<span class="string">"%ld"</span>,version.majorVersion];</span><br><span class="line">            NSInteger versionValue = [versionStr integerValue];</span><br><span class="line">            <span class="keyword">if</span> (versionValue &gt;= 10.0)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span> ([string rangeOfString:@<span class="string">"ipsec"</span>].location != NSNotFound )&#123;</span><br><span class="line">                    <span class="built_in">return</span> YES;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span> ([string rangeOfString:@<span class="string">"tap"</span>].location != NSNotFound ||</span><br><span class="line">                    [string rangeOfString:@<span class="string">"tun"</span>].location != NSNotFound ||</span><br><span class="line">                    [string rangeOfString:@<span class="string">"ppp"</span>].location != NSNotFound)&#123;</span><br><span class="line">                    <span class="built_in">return</span> YES;</span><br><span class="line">                &#125;</span><br><span class="line">                </span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            temp_addr = temp_addr-&gt;ifa_next;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    // Free memory</span><br><span class="line">    freeifaddrs(interfaces);</span><br><span class="line">    <span class="built_in">return</span> NO;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       
       
@@ -49,8 +49,8 @@
     
     <entry>
       <title>git 配置ssh key 不生效</title>
-      <link href="/2018/06/02/git-%E9%85%8D%E7%BD%AEssh-key-%E4%B8%8D%E7%94%9F%E6%95%88/"/>
-      <url>/2018/06/02/git-%E9%85%8D%E7%BD%AEssh-key-%E4%B8%8D%E7%94%9F%E6%95%88/</url>
+      <link href="/Blog/2018/06/02/git-%E9%85%8D%E7%BD%AEssh-key-%E4%B8%8D%E7%94%9F%E6%95%88/"/>
+      <url>/Blog/2018/06/02/git-%E9%85%8D%E7%BD%AEssh-key-%E4%B8%8D%E7%94%9F%E6%95%88/</url>
       <content type="html"><![CDATA[<h1 id="git-配置ssh-key-不生效"><a href="#git-配置ssh-key-不生效" class="headerlink" title="git 配置ssh key 不生效"></a>git 配置ssh key 不生效</h1><p>给ssh key的文件配置权限<br>chmod 777 HeroDemo</p>]]></content>
       
       
@@ -58,8 +58,8 @@
     
     <entry>
       <title>rasa config</title>
-      <link href="/2018/06/02/rasa-config/"/>
-      <url>/2018/06/02/rasa-config/</url>
+      <link href="/Blog/2018/06/02/rasa-config/"/>
+      <url>/Blog/2018/06/02/rasa-config/</url>
       <content type="html"><![CDATA[<h1 id="rasa-config"><a href="#rasa-config" class="headerlink" title="rasa config"></a>rasa config</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -m rasa_nlu.server -c sample_configs/config_spacy.json</span><br></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -m rasa_nlu.server -c sample_configs/config_ava_20171201.json &amp;</span><br></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -X POST localhost:5000/parse -d <span class="string">'&#123;"q":"I am looking for Mexican food"&#125;'</span> | python -m json.tool</span><br></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup python -m rasa_nlu.server -c sample_configs/config_ava_20171206.json</span><br></pre></td></tr></table></figure>]]></content>
       
       
@@ -67,8 +67,8 @@
     
     <entry>
       <title>angular5 知识点</title>
-      <link href="/2018/06/02/angular5-%E7%9F%A5%E8%AF%86%E7%82%B9/"/>
-      <url>/2018/06/02/angular5-%E7%9F%A5%E8%AF%86%E7%82%B9/</url>
+      <link href="/Blog/2018/06/02/angular5-%E7%9F%A5%E8%AF%86%E7%82%B9/"/>
+      <url>/Blog/2018/06/02/angular5-%E7%9F%A5%E8%AF%86%E7%82%B9/</url>
       <content type="html"><![CDATA[<h1 id="angular5-知识点"><a href="#angular5-知识点" class="headerlink" title="angular5 知识点"></a>angular5 知识点</h1><p><a href="https://material.angular.io/components/dialog/examples" target="_blank" rel="noopener">https://material.angular.io/components/dialog/examples</a></p>]]></content>
       
       <categories>
@@ -82,8 +82,8 @@
     
     <entry>
       <title>ngrok 反向代理本地项目供外界使用</title>
-      <link href="/2018/06/02/ngrok-%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E6%9C%AC%E5%9C%B0%E9%A1%B9%E7%9B%AE%E4%BE%9B%E5%A4%96%E7%95%8C%E4%BD%BF%E7%94%A8/"/>
-      <url>/2018/06/02/ngrok-%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E6%9C%AC%E5%9C%B0%E9%A1%B9%E7%9B%AE%E4%BE%9B%E5%A4%96%E7%95%8C%E4%BD%BF%E7%94%A8/</url>
+      <link href="/Blog/2018/06/02/ngrok-%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E6%9C%AC%E5%9C%B0%E9%A1%B9%E7%9B%AE%E4%BE%9B%E5%A4%96%E7%95%8C%E4%BD%BF%E7%94%A8/"/>
+      <url>/Blog/2018/06/02/ngrok-%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E6%9C%AC%E5%9C%B0%E9%A1%B9%E7%9B%AE%E4%BE%9B%E5%A4%96%E7%95%8C%E4%BD%BF%E7%94%A8/</url>
       <content type="html"><![CDATA[<h1 id="ngrok-反向代理本地项目供外界使用"><a href="#ngrok-反向代理本地项目供外界使用" class="headerlink" title="ngrok 反向代理本地项目供外界使用"></a>ngrok 反向代理本地项目供外界使用</h1><p>[ngrok] (<a href="https://ngrok.com/" target="_blank" rel="noopener">https://ngrok.com/</a>)</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./ngrok http localhost:8888</span><br></pre></td></tr></table></figure>]]></content>
       
       
@@ -91,8 +91,8 @@
     
     <entry>
       <title>自然语言功能</title>
-      <link href="/2018/06/02/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%8A%9F%E8%83%BD/"/>
-      <url>/2018/06/02/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%8A%9F%E8%83%BD/</url>
+      <link href="/Blog/2018/06/02/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%8A%9F%E8%83%BD/"/>
+      <url>/Blog/2018/06/02/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%8A%9F%E8%83%BD/</url>
       <content type="html"><![CDATA[<h1 id="自然语言功能"><a href="#自然语言功能" class="headerlink" title="自然语言功能"></a>自然语言功能</h1><h2 id="1-安装结巴"><a href="#1-安装结巴" class="headerlink" title="1.安装结巴"></a>1.安装结巴</h2><h2 id="2-中文分词库导入"><a href="#2-中文分词库导入" class="headerlink" title="2. 中文分词库导入"></a>2. 中文分词库导入</h2><h2 id="3-中文的training-file"><a href="#3-中文的training-file" class="headerlink" title="3. 中文的training file"></a>3. 中文的training file</h2>]]></content>
       
       
@@ -100,8 +100,8 @@
     
     <entry>
       <title>shell 命令</title>
-      <link href="/2018/06/02/shell-%E5%91%BD%E4%BB%A4/"/>
-      <url>/2018/06/02/shell-%E5%91%BD%E4%BB%A4/</url>
+      <link href="/Blog/2018/06/02/shell-%E5%91%BD%E4%BB%A4/"/>
+      <url>/Blog/2018/06/02/shell-%E5%91%BD%E4%BB%A4/</url>
       <content type="html"><![CDATA[<h1 id="shell-命令"><a href="#shell-命令" class="headerlink" title="shell 命令"></a>shell 命令</h1><h2 id="scp-传输文件"><a href="#scp-传输文件" class="headerlink" title="scp 传输文件"></a>scp 传输文件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp 文件 root@目标服务器:/目标路径</span><br></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp root@服务器:/文件路径 目标路径</span><br></pre></td></tr></table></figure><h2 id="mongodump"><a href="#mongodump" class="headerlink" title="mongodump"></a>mongodump</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mongodump -h dbhost -d dbname -o dbdirectory</span><br></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mongodump --host=xxxx --username=xxx --password=xxxx --db=xxx --collection=product</span><br><span class="line">mongorestore --host xxxx  --username xxx --password xxx  --db xxx --collection product dump /xxx/product.bson</span><br><span class="line">mongorestore --host xxx  --username xxx --password xxx  --db xxx --collection product   /xxx/xxx/dump/xxx/product.bson</span><br></pre></td></tr></table></figure>]]></content>
       
       
@@ -109,8 +109,8 @@
     
     <entry>
       <title>ubuntu 配置https证书</title>
-      <link href="/2018/06/02/ubuntu-%E9%85%8D%E7%BD%AEhttps%E8%AF%81%E4%B9%A6/"/>
-      <url>/2018/06/02/ubuntu-%E9%85%8D%E7%BD%AEhttps%E8%AF%81%E4%B9%A6/</url>
+      <link href="/Blog/2018/06/02/ubuntu-%E9%85%8D%E7%BD%AEhttps%E8%AF%81%E4%B9%A6/"/>
+      <url>/Blog/2018/06/02/ubuntu-%E9%85%8D%E7%BD%AEhttps%E8%AF%81%E4%B9%A6/</url>
       <content type="html"><![CDATA[<h1 id="ubuntu-配置https证书"><a href="#ubuntu-配置https证书" class="headerlink" title="ubuntu 配置https证书"></a>ubuntu 配置https证书</h1>]]></content>
       
       
@@ -118,8 +118,8 @@
     
     <entry>
       <title>BlockChain</title>
-      <link href="/2018/06/02/BlockChain/"/>
-      <url>/2018/06/02/BlockChain/</url>
+      <link href="/Blog/2018/06/02/BlockChain/"/>
+      <url>/Blog/2018/06/02/BlockChain/</url>
       <content type="html"><![CDATA[<h1 id="BlockChain"><a href="#BlockChain" class="headerlink" title="BlockChain"></a>BlockChain</h1><p><a href="http://www.cocoachina.com/blockchain/20180315/22616.html" target="_blank" rel="noopener">http://www.cocoachina.com/blockchain/20180315/22616.html</a></p>]]></content>
       
       <categories>
@@ -133,8 +133,8 @@
     
     <entry>
       <title>Node 知识点</title>
-      <link href="/2018/06/02/Node-%E7%9F%A5%E8%AF%86%E7%82%B9/"/>
-      <url>/2018/06/02/Node-%E7%9F%A5%E8%AF%86%E7%82%B9/</url>
+      <link href="/Blog/2018/06/02/Node-%E7%9F%A5%E8%AF%86%E7%82%B9/"/>
+      <url>/Blog/2018/06/02/Node-%E7%9F%A5%E8%AF%86%E7%82%B9/</url>
       <content type="html"><![CDATA[<h1 id="Node-知识点"><a href="#Node-知识点" class="headerlink" title="Node 知识点"></a>Node 知识点</h1><h2 id="cors"><a href="#cors" class="headerlink" title="cors"></a>cors</h2><p>解决跨域问题</p><h2 id="mongoose-model"><a href="#mongoose-model" class="headerlink" title="mongoose + model"></a>mongoose + model</h2><h2 id="关系型数据库和菲关系型数据库"><a href="#关系型数据库和菲关系型数据库" class="headerlink" title="关系型数据库和菲关系型数据库"></a>关系型数据库和菲关系型数据库</h2><h2 id="Koa-框架理念"><a href="#Koa-框架理念" class="headerlink" title="Koa 框架理念"></a>Koa 框架理念</h2><h2 id="邀请码-进一步改进"><a href="#邀请码-进一步改进" class="headerlink" title="邀请码 进一步改进"></a>邀请码 进一步改进</h2><h2 id="socket-实例化以及维护"><a href="#socket-实例化以及维护" class="headerlink" title="socket 实例化以及维护"></a>socket 实例化以及维护</h2><h2 id="rabbitmq"><a href="#rabbitmq" class="headerlink" title="rabbitmq"></a>rabbitmq</h2>]]></content>
       
       
@@ -142,8 +142,8 @@
     
     <entry>
       <title>Docker 启动配置文件</title>
-      <link href="/2018/06/02/Docker-%E5%90%AF%E5%8A%A8%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/"/>
-      <url>/2018/06/02/Docker-%E5%90%AF%E5%8A%A8%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</url>
+      <link href="/Blog/2018/06/02/Docker-%E5%90%AF%E5%8A%A8%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/"/>
+      <url>/Blog/2018/06/02/Docker-%E5%90%AF%E5%8A%A8%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</url>
       <content type="html"><![CDATA[<h1 id="Docker-启动配置文件"><a href="#Docker-启动配置文件" class="headerlink" title="Docker 启动配置文件"></a>Docker 启动配置文件</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker-compose -f docker-compose.sit.yml up --build</span><br></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker-compose -f docker-compose.sit.yml up --build -d(后台启动)</span><br></pre></td></tr></table></figure><p>如果只是重启服务,只需</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker-compose up --build -d</span><br></pre></td></tr></table></figure><p>使用autoScript 启动<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">bash deploy.sh 环境名称 git分支 是否打包</span><br><span class="line">bash deploy.sh sit-plus master <span class="literal">true</span></span><br></pre></td></tr></table></figure></p><p>启动docker时候首先要启动base服务, 然后再启动对应环境的yml文件</p>]]></content>
       
       
@@ -151,8 +151,8 @@
     
     <entry>
       <title>iOS 需要进一步了解的知识点</title>
-      <link href="/2018/06/02/iOS-%E9%9C%80%E8%A6%81%E8%BF%9B%E4%B8%80%E6%AD%A5%E4%BA%86%E8%A7%A3%E7%9A%84%E7%9F%A5%E8%AF%86%E7%82%B9/"/>
-      <url>/2018/06/02/iOS-%E9%9C%80%E8%A6%81%E8%BF%9B%E4%B8%80%E6%AD%A5%E4%BA%86%E8%A7%A3%E7%9A%84%E7%9F%A5%E8%AF%86%E7%82%B9/</url>
+      <link href="/Blog/2018/06/02/iOS-%E9%9C%80%E8%A6%81%E8%BF%9B%E4%B8%80%E6%AD%A5%E4%BA%86%E8%A7%A3%E7%9A%84%E7%9F%A5%E8%AF%86%E7%82%B9/"/>
+      <url>/Blog/2018/06/02/iOS-%E9%9C%80%E8%A6%81%E8%BF%9B%E4%B8%80%E6%AD%A5%E4%BA%86%E8%A7%A3%E7%9A%84%E7%9F%A5%E8%AF%86%E7%82%B9/</url>
       <content type="html"><![CDATA[<h1 id="iOS-知识点"><a href="#iOS-知识点" class="headerlink" title="iOS 知识点"></a>iOS 知识点</h1><p>1) 使用谓词进行过滤<br>    例如: 只能输入中文 [\u4e00-\u9fa5]</p><p>2) range Swift 中的实例化方法</p><p>3) 泛型的详解</p><p>4) airprint 功能(打印功能)</p>]]></content>
       
       
@@ -160,8 +160,8 @@
     
     <entry>
       <title>英文学习网站</title>
-      <link href="/2018/06/02/%E8%8B%B1%E6%96%87%E5%AD%A6%E4%B9%A0%E7%BD%91%E7%AB%99/"/>
-      <url>/2018/06/02/%E8%8B%B1%E6%96%87%E5%AD%A6%E4%B9%A0%E7%BD%91%E7%AB%99/</url>
+      <link href="/Blog/2018/06/02/%E8%8B%B1%E6%96%87%E5%AD%A6%E4%B9%A0%E7%BD%91%E7%AB%99/"/>
+      <url>/Blog/2018/06/02/%E8%8B%B1%E6%96%87%E5%AD%A6%E4%B9%A0%E7%BD%91%E7%AB%99/</url>
       <content type="html"><![CDATA[<h1 id="英文学习网站"><a href="#英文学习网站" class="headerlink" title="英文学习网站"></a>英文学习网站</h1><p>无字幕的美剧, 英剧等等</p><p><a href="http://www.cucirca.com/" target="_blank" rel="noopener">http://www.cucirca.com/</a> </p>]]></content>
       
       
@@ -169,8 +169,8 @@
     
     <entry>
       <title>移动端室内定位</title>
-      <link href="/2018/06/02/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AE%A4%E5%86%85%E5%AE%9A%E4%BD%8D/"/>
-      <url>/2018/06/02/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AE%A4%E5%86%85%E5%AE%9A%E4%BD%8D/</url>
+      <link href="/Blog/2018/06/02/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AE%A4%E5%86%85%E5%AE%9A%E4%BD%8D/"/>
+      <url>/Blog/2018/06/02/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AE%A4%E5%86%85%E5%AE%9A%E4%BD%8D/</url>
       <content type="html"><![CDATA[<h1 id="移动端室内定位"><a href="#移动端室内定位" class="headerlink" title="移动端室内定位"></a>移动端室内定位</h1><p>indoorvlater 这个是地磁定位</p>]]></content>
       
       
@@ -178,8 +178,8 @@
     
     <entry>
       <title>TestFlight 使用详解</title>
-      <link href="/2018/06/02/TestFlight-%E4%BD%BF%E7%94%A8%E8%AF%A6%E8%A7%A3/"/>
-      <url>/2018/06/02/TestFlight-%E4%BD%BF%E7%94%A8%E8%AF%A6%E8%A7%A3/</url>
+      <link href="/Blog/2018/06/02/TestFlight-%E4%BD%BF%E7%94%A8%E8%AF%A6%E8%A7%A3/"/>
+      <url>/Blog/2018/06/02/TestFlight-%E4%BD%BF%E7%94%A8%E8%AF%A6%E8%A7%A3/</url>
       <content type="html"><![CDATA[<h1 id="TestFlight-使用详解"><a href="#TestFlight-使用详解" class="headerlink" title="TestFlight 使用详解"></a>TestFlight 使用详解</h1><p>1) 在itunes connect 里面邀请用户<br>2) 在对应的app下面邀请对应的用户</p>]]></content>
       
       
@@ -187,8 +187,8 @@
     
     <entry>
       <title>iOS 控件及第三方</title>
-      <link href="/2018/06/02/iOS-%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91/"/>
-      <url>/2018/06/02/iOS-%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91/</url>
+      <link href="/Blog/2018/06/02/iOS-%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91/"/>
+      <url>/Blog/2018/06/02/iOS-%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91/</url>
       <content type="html"><![CDATA[<h1 id="iOS-控件及第三方"><a href="#iOS-控件及第三方" class="headerlink" title="iOS 控件及第三方"></a>iOS 控件及第三方</h1><h2 id="Fabric"><a href="#Fabric" class="headerlink" title="Fabric"></a>Fabric</h2><p>用于统计iOS端错误及crash日志</p><h2 id="DLRadioButton"><a href="#DLRadioButton" class="headerlink" title="DLRadioButton"></a>DLRadioButton</h2><p>DLRadioButton <a href="https://github.com/DavydLiu/DLRadioButton" target="_blank" rel="noopener">选择按钮控件</a></p><h2 id="KGModal"><a href="#KGModal" class="headerlink" title="KGModal"></a>KGModal</h2><p>KGModal <a href="https://github.com/kgn/KGModal" target="_blank" rel="noopener">弹窗效果 ipad iphone</a></p><h2 id="SignatureView"><a href="#SignatureView" class="headerlink" title="SignatureView"></a>SignatureView</h2><p>SignatureView <a href="https://github.com/jcmontiel/SignatureView" target="_blank" rel="noopener">签字View</a></p><h2 id="CheckboxButton"><a href="#CheckboxButton" class="headerlink" title="CheckboxButton"></a>CheckboxButton</h2><p>CheckboxButton <a href="https://github.com/chrisamanse/CheckboxButton" target="_blank" rel="noopener">勾选按钮控件</a></p><h2 id="TPKeyboardAvoiding"><a href="#TPKeyboardAvoiding" class="headerlink" title="TPKeyboardAvoiding"></a>TPKeyboardAvoiding</h2><p>TPKeyboardAvoiding <a href="https://github.com/michaeltyson/TPKeyboardAvoiding" target="_blank" rel="noopener">防止键盘遮挡输入框</a></p><h2 id="Auth0"><a href="#Auth0" class="headerlink" title="Auth0"></a>Auth0</h2><p>OAuth 2.0 理念</p><h2 id="firebase"><a href="#firebase" class="headerlink" title="firebase"></a>firebase</h2><p>firebase 的使用</p>]]></content>
       
       
@@ -196,8 +196,8 @@
     
     <entry>
       <title>值得思考的几个框架</title>
-      <link href="/2018/06/02/%E5%80%BC%E5%BE%97%E6%80%9D%E8%80%83%E7%9A%84%E5%87%A0%E4%B8%AA%E6%A1%86%E6%9E%B6/"/>
-      <url>/2018/06/02/%E5%80%BC%E5%BE%97%E6%80%9D%E8%80%83%E7%9A%84%E5%87%A0%E4%B8%AA%E6%A1%86%E6%9E%B6/</url>
+      <link href="/Blog/2018/06/02/%E5%80%BC%E5%BE%97%E6%80%9D%E8%80%83%E7%9A%84%E5%87%A0%E4%B8%AA%E6%A1%86%E6%9E%B6/"/>
+      <url>/Blog/2018/06/02/%E5%80%BC%E5%BE%97%E6%80%9D%E8%80%83%E7%9A%84%E5%87%A0%E4%B8%AA%E6%A1%86%E6%9E%B6/</url>
       <content type="html"><![CDATA[<h1 id="值得思考的几个框架"><a href="#值得思考的几个框架" class="headerlink" title="值得思考的几个框架"></a>值得思考的几个框架</h1><p>apidoc <a href="http://apidocjs.com/" target="_blank" rel="noopener">生成后端api框架</a></p><p>nodejs 中间的环境配置<br>logger 管理的错误日志分类<br>mongoDB 1) 配置连接以及连接多个mongo数据库<br>        2) quick-mongo (npm包)<br>gitbook 生成框架的文档</p><p>Vue的官方文档使用的<a href="git@github.com:vuejs/vuejs.org.git">Hexo</a></p>]]></content>
       
       
@@ -205,8 +205,8 @@
     
     <entry>
       <title>ESLint + VSCode实现AutoFix</title>
-      <link href="/2018/06/02/ESLint-VSCode%E5%AE%9E%E7%8E%B0AutoFix/"/>
-      <url>/2018/06/02/ESLint-VSCode%E5%AE%9E%E7%8E%B0AutoFix/</url>
+      <link href="/Blog/2018/06/02/ESLint-VSCode%E5%AE%9E%E7%8E%B0AutoFix/"/>
+      <url>/Blog/2018/06/02/ESLint-VSCode%E5%AE%9E%E7%8E%B0AutoFix/</url>
       <content type="html"><![CDATA[<h1 id="ESLint-VSCode实现AutoFix"><a href="#ESLint-VSCode实现AutoFix" class="headerlink" title="ESLint + VSCode实现AutoFix"></a>ESLint + VSCode实现AutoFix</h1><p>package.json 添加eslint<br> 添加eslint的rules<br><a href="https://eslint.org/docs/rules/" target="_blank" rel="noopener">eslint rules</a></p><p>VSCode 首选项–&gt; 设置 —&gt; 工作区设置  添加<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"eslint.autoFixOnSave"</span>: <span class="literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>]]></content>
       
       
@@ -214,8 +214,8 @@
     
     <entry>
       <title>First come in Hexo</title>
-      <link href="/2018/05/22/First-come-in-Hexo/"/>
-      <url>/2018/05/22/First-come-in-Hexo/</url>
+      <link href="/Blog/2018/05/22/First-come-in-Hexo/"/>
+      <url>/Blog/2018/05/22/First-come-in-Hexo/</url>
       <content type="html"><![CDATA[<h1 id="First-Come-into-Blog"><a href="#First-Come-into-Blog" class="headerlink" title="First Come into Blog"></a>First Come into Blog</h1><p>Hello, the world.<br>This is my first use of hexo admin<br>Thanks every body</p>]]></content>
       
       <categories>
@@ -229,8 +229,8 @@
     
     <entry>
       <title>Hello World</title>
-      <link href="/2018/05/22/hello-world/"/>
-      <url>/2018/05/22/hello-world/</url>
+      <link href="/Blog/2018/05/22/hello-world/"/>
+      <url>/Blog/2018/05/22/hello-world/</url>
       <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
       
       <categories>
